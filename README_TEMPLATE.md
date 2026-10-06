@@ -1,5 +1,6 @@
-# [Project Title]
+# Plant.Co Sales Performance Perport Dashboard
 > *One sentence. What did you analyze, build, or solve - and why does it matter?*
+> This is a performance dashboard that compares the prior year to the current years sales and gross profit percentage the current year stacks up against the present.Those metrics will be checked against sales, quantity and gross profit. This provides a clear way to compare previous performace vs current.
 
 ---
 
@@ -7,13 +8,11 @@
 > *Check what applies. This helps reviewers and collaborators understand the nature of the work at a glance. Delete this block before publishing.*
 
 - [ ] Exploratory Data Analysis (EDA)
-- [ ] SQL Analysis / Querying
 - [ ] Dashboard / Data Visualization
 - [ ] Data Pipeline / ETL
 - [ ] Predictive Modelling / Machine Learning
 - [ ] Data Cleaning / Wrangling
-- [ ] End-to-End (multiple of the above)
-- [ ] Other: ___________
+- [ ] DAX
 
 ---
 
