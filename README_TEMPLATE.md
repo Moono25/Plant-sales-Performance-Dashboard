@@ -22,7 +22,6 @@
 4. [Repository Structure](#4-repository-structure)
 5. [Data Workflow](#5-data-workflow)
 6. [Data Model & Schema](#6-data-model--schema)
-7. [ERD - Entity Relationship Diagram](#7-erd--entity-relationship-diagram) *(SQL projects)*
 8. [Analysis & Metrics](#8-analysis--metrics)
 9. [Key Insights](#9-key-insights)
 10. [Recommendations](#10-recommendations)
@@ -36,45 +35,27 @@
 ## 1. Project Overview
 
 <!--
-    This project looks at the profiability of an international plant company that cells indoor, outdoor and landscaping equipment and ornaments spanning acrros two years. This is 
-    meant to check whether the comapny is a going conern as in profitable, by comparing the current year to the previous year as way to measure sales and  profitability, this provides an easy effcient way of tracking the stores performance. The performance report shows the bottom ten countries, their performance in sales each month, product actegory and  looking at profitability accross different accounts. Profitablity declined bythe final year an accounts reduced explaining the  an there was a steady decline in performance from 2023 t0 2024.
   
 -->
 
-**Context:** [The business, research, or personal situation that motivated this project.]
+**Context:** [This project looks at the profiability of an international plant company that cells indoor, outdoor and landscaping plants  spanning across two years]
 
-**Problem Statement:** [The specific question or challenge you were addressing.]
+**Problem Statement:** [This is 
+    meant to check whether the comapny is a going conern as in profitable, by comparing the current year to the previous year as way to measure sales and  profitability, this provides an easy effcient way of tracking the stores performance.]
 
-**Approach:** [In 1–2 sentences - how did you tackle it?]
+**Approach:** [The performance report shows the bottom ten countries, their performance in sales each month, product actegory and  looking at profitability accross different accounts.]
 
-**Outcome:** [What did you produce or discover?]
+**Outcome:** [Profitablity declined bythe final year an accounts reduced explaining the  an there was a steady decline in performance from 2023 t0 2024.?]
 
 ---
 
 ## 2. Objectives
 
-<!--
-  Write objectives that are specific enough to succeed or fail.
-  Use action-oriented verbs: Identify, Determine, Quantify, Build, Evaluate.
 
-  WHAT GOOD LOOKS LIKE:
-  ✅ "Determine whether customer churn rate correlates with support ticket volume."
-  ✅ "Identify the top three revenue-driving product categories across all regions."
-  ✅ "Build a reproducible pipeline that ingests and cleans daily sales exports."
+- **Primary Objective:** [Build a Power BI dashboard that compares the current year against the previous one]
+- **Secondary Objective 1:** [To quantitfy changes in sales, gross profit, quantity and gross profit percentage of current and previous years]
+- **Secondary Objective 2:** [Find any differences in sales across dimensions like country, product type, and accounts]
 
-  WHAT TO AVOID:
-  ❌ "Explore the data."
-  ❌ "Gain insights."
-  ❌ "Understand trends."
-  (These can't fail - which means they can't succeed either.)
--->
-
-- **Primary Objective:** [The main thing you set out to do]
-- **Secondary Objective 1:** [Supporting goal]
-- **Secondary Objective 2:** [Supporting goal]
-- **Secondary Objective 3:** [Remove if not applicable]
-
-> 💡 *Every analysis decision in this project traces back to one of these objectives.*
 
 ---
 
@@ -82,42 +63,25 @@
 
 ### Scope
 
-<!--
-  WHAT GOOD LOOKS LIKE:
-  In Scope: "Transaction-level data for Regions A–E, Jan 2023–Jun 2024.
-             Analysis covers revenue, return rates, and product category performance."
-  Out of Scope: "Customer demographics and marketing spend data were excluded -
-                 demographic data was incomplete for two regions, and marketing
-                 data sits in a separate system outside this engagement."
-
-  WHAT TO AVOID:
-  ❌ Leaving Out of Scope blank. This is the section that protects your credibility.
-     If you don't define the fence, reviewers assume you missed things.
--->
-
 | Dimension | Details |
 |-----------|---------|
-| **In Scope** | [What is included - data sources, time periods, segments] |
-| **Out of Scope** | [What you explicitly excluded - and a brief reason why] |
-| **Time Period** | [Date range of the data or the project itself] |
-| **Granularity** | [Unit of analysis - row-level, daily aggregates, per-user, etc.] |
+| **In Scope** | [Plant.Co's Product and Accounts data across the world, Jan 2022 to April 2024. 
+    The analysis covers Product type, country, gross profit, gross profit percentage, year-to-date prior, year-to-date and year-to-date vs prior year-to-date. |
+| **Out of Scope**| [The sizes of the products, the individual customers that made purchases.
+    The reason product sizes were removed was that they do not affect sales in this case; customer information is not needed to perform this report.] |
+| **Time Period** | [This data contains information from three years, 2022 to 2024.] |
+| **Granularity** | [This analysis moves from years down to quarters, then months.] |
 
 ### Tools & Technologies
 
-<!--
-  List only what you actually used on this project.
-  This is not your skills section - it's the project's technical context.
--->
-
 | Category | Tool(s) Used |
 |----------|-------------|
-| Data Storage | [e.g., PostgreSQL, CSV files, BigQuery, S3] |
-| Data Processing | [e.g., Python, R, SQL, Excel, dbt] |
-| Analysis | [e.g., pandas, dplyr, custom SQL queries] |
-| Visualization | [e.g., Matplotlib, Tableau, Power BI, Looker] |
-| Version Control | [e.g., Git / GitHub] |
-| Documentation | [e.g., Markdown, Notion] |
-| Other | [Any additional tools] |
+| Data Source | [Plant_DTS.xls] |
+| Data Preperation | [Power Query / PowerBI data transformation] |
+| Data Modeling | [Power BI relationships, dimensional model] |
+| Analysis | [DAX measures] |
+| Visualization | [Power BI] |
+| Documentation | [Markdown/ GitHub] |
 
 ---
 
@@ -127,33 +91,20 @@
 [project-root]/
 │
 ├── data/
-│   ├── raw/                  # Original, unmodified source data - never edited
-│   ├── processed/            # Cleaned and transformed data
-│   └── external/             # Reference data, lookup tables, third-party files
+│   ├── Plant_DTS.xls         # Original, unmodified source data - never edited
 │
-├── notebooks/                # Jupyter, R Markdown, or Colab notebooks
+├── reports/
+│   ├── Project_Performance_report.pbix
 │
-├── scripts/                  # Reusable .py, .R, or .sh processing files
+├── visuals/
+│   ├── screenshots   # Exported charts, dashboard screenshots, ERD diagrams
 │
-├── queries/                  # SQL files (retain this folder for SQL-heavy projects)
-│   ├── exploratory/          # Ad-hoc or investigative queries
-│   ├── transformations/      # Cleaning and reshaping logic
-│   └── final/                # Production-ready or presentation queries
-│
-├── reports/                  # Final outputs: PDFs, slide decks, Word docs
-│
-├── visuals/                  # Exported charts, dashboard screenshots, ERD diagrams
-│
-├── docs/                     # Data dictionaries, schema notes, reference material
+├── docs/
+│   ├── data_dictionary.md  # Data dictionaries, schema notes, reference material
 │
 ├── project_metadata.yml      # Machine-readable metadata (optional)
 └── README.md                 # You are here
-```
 
-> ⚠️ *Delete folders you didn't use. An empty folder is worse than no folder.*
-> SQL-heavy projects: keep `queries/`. Analysis-only projects: keep `notebooks/`. Both? Keep both.
-
----
 
 ## 5. Data Workflow
 
@@ -194,7 +145,8 @@ Interactive Dashboards
 ```
 
 1. **Source:** [Where did the data come from? Format, size, access method.]
-2. **Ingestion:** [How was it brought in?]
+2. **Ingestion:** [How was it brought in?
+]
 3. **Cleaning:** [What issues did you find and fix?]
 4. **Transformation:** [What new fields, aggregations, or structures did you create?]
 5. **Analysis:** [What methods - statistical, visual, query-based, model-based?]
@@ -239,99 +191,6 @@ Interactive Dashboards
 
 *Add additional table blocks as needed for multi-table projects.*
 
----
-
-## 7. ERD - Entity Relationship Diagram
-### *(Primarily for SQL Projects - remove this section if not applicable)*
-
-<!--
-  An ERD shows how your tables connect to each other visually.
-  It is the fastest way for a reviewer to understand the data structure
-  of a SQL project without reading every query.
-
-  HOW TO INCLUDE YOUR ERD:
-  Option A - Image embed (most common):
-    Export your ERD from dbdiagram.io, DBeaver, Lucidchart, or similar.
-    Save to /visuals/erd.png and reference it below.
-
-  Option B - dbdiagram.io code block (version-controllable):
-    Paste your schema definition code directly in the fenced block below.
-    Anyone can paste it into dbdiagram.io to regenerate the visual.
-
-  Option C - Mermaid diagram (renders natively in GitHub):
-    Use the mermaid code block syntax below.
-    GitHub will render this as a diagram automatically.
-
-  PICK ONE. Don't use all three. Delete the options you don't use.
--->
-
-### Option A - Embedded Image
-![ERD Diagram](visuals/erd.png)
-*[Brief caption: e.g., "Three-table schema - orders, customers, and products joined on shared IDs."]*
-
----
-
-### Option B - dbdiagram.io Schema Definition
-```
-Table orders {
-  order_id    int     [pk]
-  customer_id int     [ref: > customers.customer_id]
-  product_id  int     [ref: > products.product_id]
-  order_date  date
-  amount      float
-}
-
-Table customers {
-  customer_id int  [pk]
-  region_code string
-  signup_date date
-}
-
-Table products {
-  product_id   int    [pk]
-  category     string
-  unit_price   float
-}
-```
-*Paste this into [dbdiagram.io](https://dbdiagram.io) to view the visual.*
-
----
-
-### Option C - Mermaid Diagram *(renders on GitHub)*
-```mermaid
-erDiagram
-    ORDERS {
-        int order_id PK
-        int customer_id FK
-        int product_id FK
-        date order_date
-        float amount
-    }
-    CUSTOMERS {
-        int customer_id PK
-        string region_code
-        date signup_date
-    }
-    PRODUCTS {
-        int product_id PK
-        string category
-        float unit_price
-    }
-    ORDERS ||--o{ CUSTOMERS : "placed by"
-    ORDERS ||--o{ PRODUCTS : "contains"
-```
-
----
-
-**Table Relationships Summary:**
-
-| Relationship | Join Key | Type |
-|-------------|----------|------|
-| `orders` → `customers` | `customer_id` | Many-to-One |
-| `orders` → `products` | `product_id` | Many-to-One |
-| [Add rows as needed] | | |
-
----
 
 ## 8. Analysis & Metrics
 
@@ -456,7 +315,7 @@ erDiagram
 -->
 
 ### Assumptions
-- [What did you treat as true without being able to verify?]
+- [The source data was assumed to be representative of the sales activity covered by the dataset.]
 - [What simplifications did you make for scope or feasibility?]
 - [What domain rules or definitions did you accept as given?]
 
@@ -496,20 +355,21 @@ erDiagram
 
 | Deliverable | Description | Location |
 |-------------|-------------|----------|
-| [Name] | [What it contains] | [`/path/to/file`] |
-| [Name] | [What it contains] | [`/path/to/file`] |
-| [Name] | [What it contains] | [`/path/to/file`] |
+| [Power BI dashboard] | [Interactive Plant.Co performance report dashboard containing the analysis and visualizations.]| [powerbi/PlantCo_Sales_Performance.pbix] |
+| [Source dataset]  | [Original Plant.Co dataset used as the source for the analysis.] |  [`/data/Plant_DTS.xls`] |
+| [Data dictionary] | [Documentation describing the relevant dataset fields and structure.] | [`/docs/data_dictionary.md`] |
+| [Project Documentation] | [README documenting the project, workflow, analysis and findings.] | [`/README.md`] |
 
 ---
 
 ## 14. Author
 
-**[Your Name]**
-[Your role or title - current or target]
+**[Mapenzi Moono]**
+[Data support/Intern - Data Analyst/ Research Associate/ M&E Assistant]
 
-- 🔗 [LinkedIn URL]
+- 🔗 [https://www.linkedin.com/in/mapenzi-moono-445aaa26a/]
 - 💼 [Portfolio or GitHub profile URL]
-- 📧 [Email - optional]
+- 📧 [mapenzimoono345@gmail.com]
 
 ---
 
