@@ -145,7 +145,8 @@ The final Power BI report provides an interactive view of Plant.Co's sales perfo
 
 ### Performance Overview
 
-![Plant.Co Performance Dashboard](visuals/screenshots/performance_dashboard.png)
+![Plant.Co Performance Dashboard](visuals/screenshots/performa.png)
+
 
 The dashboard enables users to explore performance across different dimensions, including time, country, product type, and accounts.
 
