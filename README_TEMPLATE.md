@@ -1,5 +1,4 @@
 # Plant.Co Sales Performance Perport Dashboard
-> *One sentence. What did you analyze, build, or solve - and why does it matter?*
 > This is a performance dashboard that compares the prior year to the current years sales and gross profit percentage the current year stacks up against the present.Those metrics will be checked against sales, quantity and gross profit. This provides a clear way to compare previous performace vs current.
 
 ---
@@ -37,22 +36,9 @@
 ## 1. Project Overview
 
 <!--
-  Write 3–5 sentences in plain language.
-  Cover: context → problem → approach → outcome.
-  Read it out loud. If it sounds like a form - rewrite it.
-
-  WHAT GOOD LOOKS LIKE:
-  "A mid-size retail business was seeing inconsistent revenue across
-  its regional stores but couldn't identify the root cause. This project
-  explored 18 months of transaction data across five regions to determine
-  whether underperformance was driven by sales volume, pricing, or return
-  rates. The analysis revealed that one region's gap was almost entirely
-  explained by an unusually high return rate on a single product category -
-  a finding invisible in the company's top-level reporting."
-
-  WHAT TO AVOID:
-  "This project analyzes sales data to find trends and insights."
-  (Too vague. Could describe 10,000 projects. Describes none of them.)
+    This project looks at the profiability of an international plant company that cells indoor, outdoor and landscaping equipment and ornaments spanning acrros two years. This is 
+    meant to check whether the comapny is a going conern as in profitable, by comparing the current year to the previous year as way to measure sales and  profitability, this provides an easy effcient way of tracking the stores performance. The performance report shows the bottom ten countries, their performance in sales each month, product actegory and  looking at profitability accross different accounts. Profitablity declined bythe final year an accounts reduced explaining the  an there was a steady decline in performance from 2023 t0 2024.
+  
 -->
 
 **Context:** [The business, research, or personal situation that motivated this project.]
@@ -194,15 +180,17 @@
 -->
 
 ```
-[Data Source(s)]
+Plant_DTS
       ↓
-[Ingestion / Collection Method]
+PowerBI- Power Query
       ↓
-[Cleaning & Transformation]
+Data cleaning & Transformation
       ↓
-[Analysis / Modelling / Querying]
+Data modeling and relationships
       ↓
-[Output / Visualisation / Reporting]
+Dax Measures
+      ↓
+Interactive Dashboards
 ```
 
 1. **Source:** [Where did the data come from? Format, size, access method.]
