@@ -4,7 +4,6 @@
 ---
 
 ## ⚙️ Project Type Flags
-> *Check what applies. This helps reviewers and collaborators understand the nature of the work at a glance. Delete this block before publishing.*
 
 - [ ] Exploratory Data Analysis (EDA)
 - [ ] Dashboard / Data Visualization
@@ -34,18 +33,14 @@
 
 ## 1. Project Overview
 
-<!--
-  
--->
+**Context:** This project looks at the profiability of an international plant company that cells indoor, outdoor and landscaping plants  spanning across two years.
 
-**Context:** [This project looks at the profiability of an international plant company that cells indoor, outdoor and landscaping plants  spanning across two years]
+**Problem Statement:** This is 
+    meant to check whether the comapny is a going conern as in profitable, by comparing the current year to the previous year as way to measure sales and  profitability, this provides an easy effcient way of tracking the stores performance.
 
-**Problem Statement:** [This is 
-    meant to check whether the comapny is a going conern as in profitable, by comparing the current year to the previous year as way to measure sales and  profitability, this provides an easy effcient way of tracking the stores performance.]
+**Approach:** The performance report shows the bottom ten countries, their performance in sales each month, product actegory and  looking at profitability accross different accounts.]
 
-**Approach:** [The performance report shows the bottom ten countries, their performance in sales each month, product actegory and  looking at profitability accross different accounts.]
-
-**Outcome:** [Profitablity declined bythe final year an accounts reduced explaining the  an there was a steady decline in performance from 2023 t0 2024.?]
+**Outcome:** Profitablity declined bythe final year an accounts reduced explaining the  an there was a steady decline in performance from 2023 t0 2024.
 
 ---
 
@@ -262,5 +257,5 @@ Gross profit and gross profit percentage provide additional context when evaluat
 
 ---
 
-*Last updated: [Month YYYY]*
+*Last updated: 10/2026*
 *If this template helped you, consider starring the repository.*
