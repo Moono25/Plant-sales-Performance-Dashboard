@@ -1,3 +1,3 @@
 # Visuals
 
-   Place exported charts, screenshots, and diagrams here.
+   ER diagrams, dashorboards and tables in power Query.
